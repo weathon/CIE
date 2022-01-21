@@ -18,7 +18,7 @@ class Contact(BaseModel):
     WeChatID: str
     Age: str
     Course: str
-    Comment: str
+    Message: str
 
 import smtplib, ssl
 def send(message):

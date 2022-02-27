@@ -18,10 +18,15 @@
   <meta property="og:video" content="https://www.youtube.com/watch?v=b7wDkrk39Ew" />
   <meta property="og:video" content="https://www.youtube.com/watch?v=ozITYkhR7sQ" />
   <meta property="og:video" content="https://www.youtube.com/watch?v=MCx70HTjWGU" />
+  <!-- 引入 layui.css -->
+  <link rel="stylesheet" href="//unpkg.com/layui@2.6.8/dist/css/layui.css">
+
+  <!-- 引入 layui.js -->
+  <script src="//unpkg.com/layui@2.6.8/dist/layui.js" />
 
   <!-- Favicons -->
-  <link href="assets/img/favicon.jpeg" rel="icon">
-  <link href="assets/img/apple-touch-icon.jpeg" rel="apple-touch-icon">
+  <link href="assets/img/favicon.png" rel="icon">
+  <!-- <link href="assets/img/apple-touch-icon.jpeg" rel="apple-touch-icon"> -->
 
   <!-- Google Fonts -->
   <link
@@ -45,6 +50,15 @@
 <!-- gegewensdcardshumeipai -->
 
 <body>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-RTGCXTS2KF"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-RTGCXTS2KF');
+  </script>
 
   <!-- ======= Mobile nav toggle button ======= -->
   <button type="button" class="mobile-nav-toggle d-xl-none"><i class="icofont-navigation-menu"></i></button>
@@ -133,7 +147,8 @@
         <!-- k -->
         <div id="peopleList" class="scrollmenu">
           <div style="width:15%;" v-for="person in people" :key="person.name">
-            <img v-bind:src="'assets/img/' + person.pic" style="width:100%;border-radius: 1000px;" onclick="alert('Name: Wayne\n- Smart\n- Cool\n- Not as bad as Risa')"/>
+            <img v-bind:src="'assets/img/' + person.pic" style="width:100%;border-radius: 1000px;"
+              onclick="alert('Name: Wayne\n- Smart\n- Cool\n- Not as bad as Risa')" />
             <br />
             <b>{{person.name}}</b>
           </div>
@@ -150,30 +165,20 @@
         el: '#peopleList',
         data: {
           people: [
-            { name: 'Risa', pic: "Risa.jpg", type: "Founder", char: "Stupid", text: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium." },
+            { name: 'Risa', pic: "Risa.jpg", text: "The founder of the CIE. \nCIE创始人" },
+            {
+              name: '李依落 Nadie', pic: "Nadie.jpg", text: "- UCSB董希教授课题组引力理论研究员<br/>\
+- THE Hack and hack.init() Hackathon联合创始人、创喵信息科技有限公司法定代表人<br/>\
+- 密歇根大学 MHacks X 高盛最佳数据可视化奖<br/>\
+- 持证飞行员<br/>\
+- 美国青年物理学家邀请赛特邀评委（志愿者）<br/>\
+- Gravity theory researcher in Prof. Xi Dong’s group at UCSB<br/>\
+- THE Hack and hack.init() Hackathon co-founder and Legal Representative of the Chuangmiao Information Science & Technology Co., Ltd<br/>\
+- Goldman Sachs Best data visualization prize in MHacks X at University of Michigan<br/>\
+- Pilot in practice with PPL<br/>\
+- Invited Juror in the US Invitational Young Physicists Tournament (Volunteer)" },
             { name: 'Wayne', pic: "Wayne.png", type: "IT", char: "Smart", text: "ds" },
             { name: 'Wayne', pic: "Wayne.png", type: "IT", char: "Smart", text: "ds" },
-            { name: 'Wayne', pic: "Wayne.png", type: "IT", char: "Smart", text: "ds" },
-            { name: 'Wayne', pic: "Wayne.png", type: "IT", char: "Smart", text: "ds" },
-            { name: 'Wayne', pic: "Wayne.png", type: "IT", char: "Smart", text: "ds" },
-            { name: 'Wayne', pic: "Wayne.png", type: "IT", char: "Smart", text: "ds" },
-            { name: 'Wayne', pic: "Wayne.png", type: "IT", char: "Smart", text: "ds" },
-            { name: 'Wayne', pic: "Wayne.png", type: "IT", char: "Smart", text: "ds" },
-            { name: 'Wayne', pic: "Wayne.png", type: "IT", char: "Smart", text: "ds" },
-            { name: 'Wayne', pic: "Wayne.png", type: "IT", char: "Smart", text: "ds" },
-            { name: 'Wayne', pic: "Wayne.png", type: "IT", char: "Smart", text: "ds" },
-            { name: 'Wayne', pic: "Wayne.png", type: "IT", char: "Smart", text: "ds" },
-            { name: 'Wayne', pic: "Wayne.png", type: "IT", char: "Smart", text: "ds" },
-            { name: 'Wayne', pic: "Wayne.png", type: "IT", char: "Smart", text: "ds" },
-            { name: 'Wayne', pic: "Wayne.png", type: "IT", char: "Smart", text: "ds" },
-            { name: 'Wayne', pic: "Wayne.png", type: "IT", char: "Smart", text: "ds" },
-            { name: 'Wayne', pic: "Wayne.png", type: "IT", char: "Smart", text: "ds" },
-            { name: 'Wayne', pic: "Wayne.png", type: "IT", char: "Smart", text: "ds" },
-            { name: 'Wayne', pic: "Wayne.png", type: "IT", char: "Smart", text: "ds" },
-            { name: 'Wayne', pic: "Wayne.png", type: "IT", char: "Smart", text: "ds" },
-            { name: 'Wayne', pic: "Wayne.png", type: "IT", char: "Smart", text: "ds" },
-            { name: 'Wayne', pic: "Wayne.png", type: "IT", char: "Smart", text: "ds" },
-
           ]
         }
       })
@@ -185,11 +190,11 @@
       <div hidden="true">
         <div class="hero-container">
           <div id="heroCarousel" class="carousel slide carousel-fade" data-ride="carousel">
-  
+
             <ol class="carousel-indicators" id="hero-carousel-indicators"></ol>
-  
+
             <div class="carousel-inner" role="listbox">
-  
+
               <!-- Slide 1 -->
               <div class="carousel-item active">
                 <div class="container">
@@ -197,28 +202,26 @@
                   <div class="row">
                     <div class="col-xl-8 col-lg-6 video-box1 d-flex justify-content-center align-items-stretch"
                       data-aos="fade-right">
-                      <!-- <a href="https://www.youtube.com/watch?v=szagOHSH5uI" class="venobox play-btn mb-4" -->
-                        data-vbtype="video" data-autoplay="true"></a>
                     </div>
-  
+
                     <div
                       class="col-xl-4 col-lg-6 icon-boxes d-flex flex-column align-items-stretch justify-content-center py-5 px-lg-5">
                       <h4 data-aos="fade-up">Song</h4>
                       <h3 data-aos="fade-up" style="color:#173b6c;">Jhanjran</h3>
-  
-  
+
+
                       <div class="icon-box" data-aos="fade-up">
                         <div class="icon"><i class="icofont-pen"></i></div><br>
                         <h4 class="title"><a href="">Nimaan Sidhu</a></h4>
                       </div>
-  
+
                       <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
                         <div class="icon"><i class="icofont-mic"></i></div><br>
                         <h4 class="title"><a href="">Satkar Sandhu</a></h4>
                       </div>
                     </div>
                   </div>
-  
+
                 </div>
               </div>
               <!-- Slide 2 -->
@@ -231,25 +234,25 @@
                       <a href="https://www.youtube.com/watch?v=b7wDkrk39Ew" class="venobox play-btn mb-4"
                         data-vbtype="video" data-autoplay="true"></a>
                     </div>
-  
+
                     <div
                       class="col-xl-4 col-lg-6 icon-boxes d-flex flex-column align-items-stretch justify-content-center py-5 px-lg-5">
                       <h4 data-aos="fade-up">Song</h4>
                       <h3 data-aos="fade-up" style="color:#173b6c;">Peke tur jana Jatti ne</h3>
-  
-  
+
+
                       <div class="icon-box" data-aos="fade-up">
                         <div class="icon"><i class="icofont-pen"></i></div><br>
                         <h4 class="title"><a href="">Nimaan Sidhu</a></h4>
                       </div>
-  
+
                       <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
                         <div class="icon"><i class="icofont-mic"></i></div><br>
                         <h4 class="title"><a href="">Satkar Sandhu</a></h4>
                       </div>
                     </div>
                   </div>
-  
+
                 </div>
               </div>
               <!-- Slide 3 -->
@@ -262,25 +265,25 @@
                       <a href="https://www.youtube.com/watch?v=ozITYkhR7sQ" class="venobox play-btn mb-4"
                         data-vbtype="video" data-autoplay="true"></a>
                     </div>
-  
+
                     <div
                       class="col-xl-4 col-lg-6 icon-boxes d-flex flex-column align-items-stretch justify-content-center py-5 px-lg-5">
                       <h4 data-aos="fade-up">Song</h4>
                       <h3 data-aos="fade-up" style="color:#173b6c;">Ignore Marda</h3>
-  
-  
+
+
                       <div class="icon-box" data-aos="fade-up">
                         <div class="icon"><i class="icofont-pen"></i></div><br>
                         <h4 class="title"><a href="">Nimaan Sidhu</a></h4>
                       </div>
-  
+
                       <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
                         <div class="icon"><i class="icofont-mic"></i></div><br>
                         <h4 class="title"><a href="">Satkar Sandhu</a></h4>
                       </div>
                     </div>
                   </div>
-  
+
                 </div>
               </div>
               <!-- Slide 4 -->
@@ -293,42 +296,42 @@
                       <a href="https://www.youtube.com/watch?v=MCx70HTjWGU" class="venobox play-btn mb-4"
                         data-vbtype="video" data-autoplay="true"></a>
                     </div>
-  
+
                     <div
                       class="col-xl-4 col-lg-6 icon-boxes d-flex flex-column align-items-stretch justify-content-center py-5 px-lg-5">
                       <h4 data-aos="fade-up">Song</h4>
                       <h3 data-aos="fade-up" style="color:#173b6c;">Kithe Bachde</h3>
-  
-  
+
+
                       <div class="icon-box" data-aos="fade-up">
                         <div class="icon"><i class="icofont-pen"></i></div><br>
                         <h4 class="title"><a href="">Nimaan Sidhu</a></h4>
                       </div>
-  
+
                       <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
                         <div class="icon"><i class="icofont-mic"></i></div><br>
                         <h4 class="title"><a href="">Varinder Vicky Ft. Afsana Khan</a></h4>
                       </div>
                     </div>
                   </div>
-  
+
                 </div>
               </div>
-  
+
             </div>
-  
+
             <a class="carousel-control-prev" href="#heroCarousel" role="button" data-slide="prev">
               <span class="carousel-control-prev-icon icofont-simple-left" aria-hidden="true"></span>
               <span class="sr-only">Previous</span>
             </a>
-  
+
             <a class="carousel-control-next" href="#heroCarousel" role="button" data-slide="next">
               <span class="carousel-control-next-icon icofont-simple-right" aria-hidden="true"></span>
               <span class="sr-only">Next</span>
             </a>
-  
+
           </div>
-        </div> 
+        </div>
       </div>
     </section><!-- End multi-video -->
 

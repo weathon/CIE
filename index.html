@@ -62,7 +62,7 @@
     layui.use('layer', function () {
       var layer = layui.layer;
 
-      layer.msg('hello');
+      layer.msg('hello',{type: 1});
     });              
   </script>
 
@@ -112,11 +112,16 @@
 
         <div class="section-title">
           <h2>About</h2>
-          <p>Hi guys,
-            this site may help you to know more about Nimaan Sidhu. He is a Indian Singer, Lyricist and Composer. Sidhu
-            is associated with Punjabi music and soon going to attach himself with Punjabi cinema. He started his career
-            with writing the lyrics of the song "Fed up Jatti" sung by Satkar Sandhu, and soon he is his going to debut
-            his first song. <br><br>
+          <p>Coastal International Education is an organization dedicated to improving the English communication ability
+            for everyone who requires it. “A-B-C” policy is what C.I.E. pursues. It stands for Active learning,
+            Broadened Horizon, and Consistent Interest. The focus for Coastal International Education is to increase the
+            interest in learning English and the communication ability of students. Learning passively is a problem for
+            the majority of students, and the reason for it is that the content they have been taught is not attractive
+            enough. With our 1v1 teaching style, our teachers can have a deeper understanding of that one specific
+            student and know what his/her interest is. Therefore, it can make the class more attractive to the student.
+            At Coastal International Education, the teacher is not only a teacher, they are also the friend, the
+            psychologist, and the adviser for the success of that student’s future.
+            <br><br>
           </p>
         </div>
 
@@ -154,7 +159,7 @@
         <div id="peopleList" class="scrollmenu">
           <div style="width:15%;" v-for="person in people" :key="person.name">
             <img v-bind:src="'assets/img/' + person.pic" style="width:100%;border-radius: 1000px;"
-              onclick="alert('Name: Wayne\n- Smart\n- Cool\n- Not as bad as Risa')" />
+              v-on:click="alert(person.text)" />
             <br />
             <b>{{person.name}}</b>
           </div>
@@ -169,177 +174,47 @@
     <script>
       var example1 = new Vue({
         el: '#peopleList',
+        methods: {
+          alert: function(text) {
+            alert(text)      
+          }
+        },
         data: {
           people: [
-            { name: 'Risa', pic: "Risa.jpg", text: "The founder of the CIE. \nCIE创始人" },
+            { name: '徐子骞 Risa', pic: "Risa.jpg", text: "-C.I.E. 创始人\n\
+-YOC  \"The Only Way to Succeed\": A Glimpse of the Involution Among Chinese Youths 当代教育现状研究\n\
+-YIC \"The Only Way to Succeed\": A Glimpse of the Involution Among Chinese Youths 当代学生心理研究\n\
+-Conrad Challenge 科技创新创业竞赛国家级奖项\n\
+-Spark公益支教志愿者\n\
+\n\
+-C.I.E. Founder\n\
+-YOC  \"The Only Way to Succeed\": A Glimpse of the Involution Among Chinese Youths Superior Award\n\
+-YIC \"The Only Way to Succeed\": A Glimpse of the Involution Among Chinese Youths Research Leader\n\
+-Conrad Challenge National Award\n\
+-Spark Charity teaching volunteers\n\
+" },
+            { name: '黄锶桐 Sammi', pic: "Sammi.jpg", text: "-托福口语28\n-科学奥林匹克前十\n-四年的学生会主席\n-AP中文课程讲师\n-University of Pennsylvania志愿者\n\n-TOEFL Speaking 28\n- Science Olympiad top ten\n- Four-year student council president\n- Instructor of AP Chinese course\n-University of Pennsylvania Volunteer\n" },
+            { name: '朱玮钰 Michele', pic: "Michele.jpg", text: "-雅思口语7\n-西南财经大学国际经济与贸易（双语）专业\n-四川农业大学同学合作完成项目“染青衣”，获得省级前三，项目已在落地中。\n-四川省乔登杯口语比赛省级前三\n-Junior Achievement志愿者\n \n-IELTS Speaking 7\n- International Economics and Trade (Bilingual) Major in Southwestern University of Finance and   Economics\n- Project \"Dyeing Tsing Yi\" won Provincial Finalist\n- Sichuan Jordan Cup Oral Competition Finalist\n-Junior Achievement Volunteer" },
+            { name: '马如意 Ruyi', pic: "Ruru.jpg", text: "-Non-profit Tutoring Organization Founder 非盈利教育机构联合创始人\n-Non-profit Feral Cat Rescue Foundation Founder 非盈利流浪猫救助中心 猫途 创始人\n-International Student Blog Account 创始人\n-留学生汉文化组织 Fifteen 联合创始人兼主编 \n-President’s Service Award - Gold \n\n-Founder of International Student Blog\n-Non-profit Tutoring Organization Founder\n-Non-profit Feral Cat Rescue Foundation Founder\n-Co-founder and editor-in-chief of Fifteen, a Chinese cultural organization for international students\n-President's Service Award - Gold\n" },
+            { name: '何天烁 Todd ', pic: "Todd.jpg", text: "托福口语 28\nTechX Hackathon 软件组一等奖\nPPMT前十\n英国数学信托金奖\nAcing Autism志愿者\n\nTOEFL Speaking 28\nTechX Hackathon First Prize in Software Division\nPeer Potential Mock trial Top 10\nUnited Kingdom Maths Trust Gold Prize\nAcing Autism Volunteer\n" },
+            // { name: '郭闻起 Wayne', pic: "Wayne.png", text: "The founder of the CIE. \nCIE创始人" },
             {
-              name: '李依落 Nadie', pic: "Nadie.jpg", text: "- UCSB董希教授课题组引力理论研究员<br/>\
-- THE Hack and hack.init() Hackathon联合创始人、创喵信息科技有限公司法定代表人<br/>\
-- 密歇根大学 MHacks X 高盛最佳数据可视化奖<br/>\
-- 持证飞行员<br/>\
-- 美国青年物理学家邀请赛特邀评委（志愿者）<br/>\
-- Gravity theory researcher in Prof. Xi Dong’s group at UCSB<br/>\
-- THE Hack and hack.init() Hackathon co-founder and Legal Representative of the Chuangmiao Information Science & Technology Co., Ltd<br/>\
-- Goldman Sachs Best data visualization prize in MHacks X at University of Michigan<br/>\
-- Pilot in practice with PPL<br/>\
+              name: '李依落 Nadie', pic: "Nadie.jpg", text: "- UCSB董希教授课题组引力理论研究员\n\
+- THE Hack and hack.init() Hackathon联合创始人、创喵信息科技有限公司法定代表人\n\
+- 密歇根大学 MHacks X 高盛最佳数据可视化奖\n\
+- 持证飞行员\n\
+- 美国青年物理学家邀请赛特邀评委（志愿者）\n\
+- Gravity theory researcher in Prof. Xi Dong’s group at UCSB\n\
+- THE Hack and hack.init() Hackathon co-founder and Legal Representative of the Chuangmiao Information Science & Technology Co., Ltd\n\
+- Goldman Sachs Best data visualization prize in MHacks X at University of Michigan\n\
+- Pilot in practice with PPL\n\
 - Invited Juror in the US Invitational Young Physicists Tournament (Volunteer)" },
-            { name: 'Wayne', pic: "Wayne.png", type: "IT", char: "Smart", text: "ds" },
-            { name: 'Wayne', pic: "Wayne.png", type: "IT", char: "Smart", text: "ds" },
           ]
         }
       })
     </script>
 
     <!-- ======= multi-video Section ======= -->
-
-    <section id="multi-video" class="multi-video about section-bg">
-      <div hidden="true">
-        <div class="hero-container">
-          <div id="heroCarousel" class="carousel slide carousel-fade" data-ride="carousel">
-
-            <ol class="carousel-indicators" id="hero-carousel-indicators"></ol>
-
-            <div class="carousel-inner" role="listbox">
-
-              <!-- Slide 1 -->
-              <div class="carousel-item active">
-                <div class="container">
-                  <br><br><br><br><br><br>
-                  <div class="row">
-                    <div class="col-xl-8 col-lg-6 video-box1 d-flex justify-content-center align-items-stretch"
-                      data-aos="fade-right">
-                    </div>
-
-                    <div
-                      class="col-xl-4 col-lg-6 icon-boxes d-flex flex-column align-items-stretch justify-content-center py-5 px-lg-5">
-                      <h4 data-aos="fade-up">Song</h4>
-                      <h3 data-aos="fade-up" style="color:#173b6c;">Jhanjran</h3>
-
-
-                      <div class="icon-box" data-aos="fade-up">
-                        <div class="icon"><i class="icofont-pen"></i></div><br>
-                        <h4 class="title"><a href="">Nimaan Sidhu</a></h4>
-                      </div>
-
-                      <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
-                        <div class="icon"><i class="icofont-mic"></i></div><br>
-                        <h4 class="title"><a href="">Satkar Sandhu</a></h4>
-                      </div>
-                    </div>
-                  </div>
-
-                </div>
-              </div>
-              <!-- Slide 2 -->
-              <div class="carousel-item">
-                <div class="container">
-                  <br><br><br><br><br><br>
-                  <div class="row">
-                    <div class="col-xl-8 col-lg-6 video-box2 d-flex justify-content-center align-items-stretch"
-                      data-aos="fade-right">
-                      <a href="https://www.youtube.com/watch?v=b7wDkrk39Ew" class="venobox play-btn mb-4"
-                        data-vbtype="video" data-autoplay="true"></a>
-                    </div>
-
-                    <div
-                      class="col-xl-4 col-lg-6 icon-boxes d-flex flex-column align-items-stretch justify-content-center py-5 px-lg-5">
-                      <h4 data-aos="fade-up">Song</h4>
-                      <h3 data-aos="fade-up" style="color:#173b6c;">Peke tur jana Jatti ne</h3>
-
-
-                      <div class="icon-box" data-aos="fade-up">
-                        <div class="icon"><i class="icofont-pen"></i></div><br>
-                        <h4 class="title"><a href="">Nimaan Sidhu</a></h4>
-                      </div>
-
-                      <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
-                        <div class="icon"><i class="icofont-mic"></i></div><br>
-                        <h4 class="title"><a href="">Satkar Sandhu</a></h4>
-                      </div>
-                    </div>
-                  </div>
-
-                </div>
-              </div>
-              <!-- Slide 3 -->
-              <div class="carousel-item">
-                <div class="container">
-                  <br><br><br><br><br><br>
-                  <div class="row">
-                    <div class="col-xl-8 col-lg-6 video-box3 d-flex justify-content-center align-items-stretch"
-                      data-aos="fade-right">
-                      <a href="https://www.youtube.com/watch?v=ozITYkhR7sQ" class="venobox play-btn mb-4"
-                        data-vbtype="video" data-autoplay="true"></a>
-                    </div>
-
-                    <div
-                      class="col-xl-4 col-lg-6 icon-boxes d-flex flex-column align-items-stretch justify-content-center py-5 px-lg-5">
-                      <h4 data-aos="fade-up">Song</h4>
-                      <h3 data-aos="fade-up" style="color:#173b6c;">Ignore Marda</h3>
-
-
-                      <div class="icon-box" data-aos="fade-up">
-                        <div class="icon"><i class="icofont-pen"></i></div><br>
-                        <h4 class="title"><a href="">Nimaan Sidhu</a></h4>
-                      </div>
-
-                      <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
-                        <div class="icon"><i class="icofont-mic"></i></div><br>
-                        <h4 class="title"><a href="">Satkar Sandhu</a></h4>
-                      </div>
-                    </div>
-                  </div>
-
-                </div>
-              </div>
-              <!-- Slide 4 -->
-              <div class="carousel-item">
-                <div class="container">
-                  <br><br><br><br><br><br>
-                  <div class="row">
-                    <div class="col-xl-8 col-lg-6 video-box4 d-flex justify-content-center align-items-stretch"
-                      data-aos="fade-right">
-                      <a href="https://www.youtube.com/watch?v=MCx70HTjWGU" class="venobox play-btn mb-4"
-                        data-vbtype="video" data-autoplay="true"></a>
-                    </div>
-
-                    <div
-                      class="col-xl-4 col-lg-6 icon-boxes d-flex flex-column align-items-stretch justify-content-center py-5 px-lg-5">
-                      <h4 data-aos="fade-up">Song</h4>
-                      <h3 data-aos="fade-up" style="color:#173b6c;">Kithe Bachde</h3>
-
-
-                      <div class="icon-box" data-aos="fade-up">
-                        <div class="icon"><i class="icofont-pen"></i></div><br>
-                        <h4 class="title"><a href="">Nimaan Sidhu</a></h4>
-                      </div>
-
-                      <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
-                        <div class="icon"><i class="icofont-mic"></i></div><br>
-                        <h4 class="title"><a href="">Varinder Vicky Ft. Afsana Khan</a></h4>
-                      </div>
-                    </div>
-                  </div>
-
-                </div>
-              </div>
-
-            </div>
-
-            <a class="carousel-control-prev" href="#heroCarousel" role="button" data-slide="prev">
-              <span class="carousel-control-prev-icon icofont-simple-left" aria-hidden="true"></span>
-              <span class="sr-only">Previous</span>
-            </a>
-
-            <a class="carousel-control-next" href="#heroCarousel" role="button" data-slide="next">
-              <span class="carousel-control-next-icon icofont-simple-right" aria-hidden="true"></span>
-              <span class="sr-only">Next</span>
-            </a>
-
-          </div>
-        </div>
-      </div>
-    </section><!-- End multi-video -->
 
     <!-- ======= Contact Section ======= -->
     <section id="contact" class="contact">
@@ -353,16 +228,18 @@
 
           <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
             <div class="contact-about">
-              <h3 style="color: #173b6c;">Nimaan Sidhu</h3>
-              <p>To know more about Punjabi Indusrty you can contect us. Hope you enjoy our content.
-                We are very happy with your visit.We keep wait for your next visit<br>Thanks </p>
-              <div class="social-links">
+              <h3 style="color: #173b6c;">C.I.E.</h3>
+              <p>Coastal International Education is an organization dedicated to improving the English communication
+                ability for everyone who requires it. “A-B-C” policy is what C.I.E. pursues. It stands for Active
+                learning, Broadened Horizon, and Consistent Interest.
+              </p>
+              <!-- <div class="social-links">
                 <a href="https://www.facebook.com/people/Nimaan-Sidhu/100008337422229" class="facebook"><i
                     class="icofont-facebook"></i></a>
                 <a href="https://instagram.com/nimaan_777?igsh... " class="instagram"><i
                     class="icofont-instagram"></i></a>
                 <a href="https://www.snapchat.com/add/nimaan777" class="linkedin"><i class="icofont-snapchat"></i></a>
-              </div>
+              </div> -->
             </div>
           </div>
 
@@ -375,7 +252,7 @@
 
               <div>
                 <i class="ri-mail-send-line"></i>
-                <p>risaxu0727#gmail.com (把#替换成@)</p>
+                <p><a>risaxu0727@gmail.com</a></p>
               </div>
 
             </div>

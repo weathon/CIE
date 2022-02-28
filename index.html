@@ -5,21 +5,22 @@
   <title>Coastal International Education</title>
   <meta charset="utf-8">
   <!-- chaojichaojikuncheesecakeduzikesouhuixuexiaoxjidong  qq zhi jei shou na yige cheesecake geiwo xkouke souyebuxi shou yebudaikouzhao zhe me jiu baolu keousu kun nanshou huang  -->
-
-  <meta name="author" content="Nimaan Sidhu">
-  <meta content="Nimaan Sidhu" property="og:title">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <meta content="This site may help to know more about Nimaan Sidhu and his carrier" name="description">
-  <meta content="Nimaan Sidhu, Nimaan Sidhu Singer, Nimaan Sidhu Lyricist, Nimaan Sidhu Composer" name="keywords">
-  <meta content="This site may help to know more about Nimaan Sidhu and his carrier" property="og:description">
-  <meta content="https://nimaansidhu.000webhostapp.com/" property="og:url">
-  <meta content="https://photos.google.com/photo/AF1QipO3lsUsSTQgUAS6lcUShPu36XA4-gP27vLqkx5H" property="og:image">
-  <meta property="og:video" content="https://www.youtube.com/watch?v=szagOHSH5uI" />
+  <meta content="Coastal International Education is an organization dedicated to improving the English communication
+  ability for everyone who requires it. “A-B-C” policy is what C.I.E. pursues. It stands for Active
+  learning, Broadened Horizon, and Consistent Interest." name="keywords">
+
+
+  <!-- <meta content="https://nimaansidhu.000webhostapp.com/" property="og:url"> -->
+  <!-- <meta content="https://photos.google.com/photo/AF1QipO3lsUsSTQgUAS6lcUShPu36XA4-gP27vLqkx5H" property="og:image"> -->
+  <!-- <meta property="og:video" content="https://www.youtube.com/watch?v=szagOHSH5uI" />
   <meta property="og:video" content="https://www.youtube.com/watch?v=b7wDkrk39Ew" />
   <meta property="og:video" content="https://www.youtube.com/watch?v=ozITYkhR7sQ" />
-  <meta property="og:video" content="https://www.youtube.com/watch?v=MCx70HTjWGU" />
+  <meta property="og:video" content="https://www.youtube.com/watch?v=MCx70HTjWGU" /> -->
   <!-- 引入 layui.css -->
   <link rel="stylesheet" href="https://unpkg.com/layui@2.6.8/dist/css/layui.css">
+  </link>
 
   <!-- 引入 layui.js -->
   <script src="https://unpkg.com/layui@2.6.8/dist/layui.js"></script>
@@ -61,9 +62,7 @@
 
     layui.use('layer', function () {
       var layer = layui.layer;
-
-      layer.msg('hello',{type: 1});
-    });              
+    });//xiamianmeishashangianduolekun
   </script>
 
   <!-- ======= Mobile nav toggle button ======= -->
@@ -172,42 +171,72 @@
 
 
     <script>
+      function showQR()
+      {
+        layer.open({
+                    type: 1
+                    , title: false //不显示标题栏
+                    , closeBtn: true
+                    // , area: '60%;'
+                    , shade: 0.8
+                    , id: 'LAY_layuipro2' 
+                    , btn: ['Okay']
+                    , btnAlign: 'c'
+                    // , moveType: 1
+                    ,fixed: true
+                    , content: "<img src='assets/img/qrcode.png'>"
+                  })
+      }
       var example1 = new Vue({
         el: '#peopleList',
         methods: {
-          alert: function(text) {
-            alert(text)      
+          alert: function (text) {
+            console.log(text);
+            layer.open({
+              type: 1
+              , title: false //不显示标题栏
+              , closeBtn: false
+              , area: '60%;'
+              , shade: 0.8
+              , id: 'LAY_layuipro' //设定一个id，防止重复弹出
+              , btn: ['Okay']
+              , btnAlign: 'c'
+              , moveType: 1
+              , content: "<p style='padding: 20px 100px;'>" + text + "</p>"
+            });
+            // });
           }
         },
         data: {
           people: [
-            { name: '徐子骞 Risa', pic: "Risa.jpg", text: "-C.I.E. 创始人\n\
--YOC  \"The Only Way to Succeed\": A Glimpse of the Involution Among Chinese Youths 当代教育现状研究\n\
--YIC \"The Only Way to Succeed\": A Glimpse of the Involution Among Chinese Youths 当代学生心理研究\n\
--Conrad Challenge 科技创新创业竞赛国家级奖项\n\
--Spark公益支教志愿者\n\
-\n\
--C.I.E. Founder\n\
--YOC  \"The Only Way to Succeed\": A Glimpse of the Involution Among Chinese Youths Superior Award\n\
--YIC \"The Only Way to Succeed\": A Glimpse of the Involution Among Chinese Youths Research Leader\n\
--Conrad Challenge National Award\n\
--Spark Charity teaching volunteers\n\
-" },
-            { name: '黄锶桐 Sammi', pic: "Sammi.jpg", text: "-托福口语28\n-科学奥林匹克前十\n-四年的学生会主席\n-AP中文课程讲师\n-University of Pennsylvania志愿者\n\n-TOEFL Speaking 28\n- Science Olympiad top ten\n- Four-year student council president\n- Instructor of AP Chinese course\n-University of Pennsylvania Volunteer\n" },
-            { name: '朱玮钰 Michele', pic: "Michele.jpg", text: "-雅思口语7\n-西南财经大学国际经济与贸易（双语）专业\n-四川农业大学同学合作完成项目“染青衣”，获得省级前三，项目已在落地中。\n-四川省乔登杯口语比赛省级前三\n-Junior Achievement志愿者\n \n-IELTS Speaking 7\n- International Economics and Trade (Bilingual) Major in Southwestern University of Finance and   Economics\n- Project \"Dyeing Tsing Yi\" won Provincial Finalist\n- Sichuan Jordan Cup Oral Competition Finalist\n-Junior Achievement Volunteer" },
-            { name: '马如意 Ruyi', pic: "Ruru.jpg", text: "-Non-profit Tutoring Organization Founder 非盈利教育机构联合创始人\n-Non-profit Feral Cat Rescue Foundation Founder 非盈利流浪猫救助中心 猫途 创始人\n-International Student Blog Account 创始人\n-留学生汉文化组织 Fifteen 联合创始人兼主编 \n-President’s Service Award - Gold \n\n-Founder of International Student Blog\n-Non-profit Tutoring Organization Founder\n-Non-profit Feral Cat Rescue Foundation Founder\n-Co-founder and editor-in-chief of Fifteen, a Chinese cultural organization for international students\n-President's Service Award - Gold\n" },
-            { name: '何天烁 Todd ', pic: "Todd.jpg", text: "托福口语 28\nTechX Hackathon 软件组一等奖\nPPMT前十\n英国数学信托金奖\nAcing Autism志愿者\n\nTOEFL Speaking 28\nTechX Hackathon First Prize in Software Division\nPeer Potential Mock trial Top 10\nUnited Kingdom Maths Trust Gold Prize\nAcing Autism Volunteer\n" },
-            // { name: '郭闻起 Wayne', pic: "Wayne.png", text: "The founder of the CIE. \nCIE创始人" },
             {
-              name: '李依落 Nadie', pic: "Nadie.jpg", text: "- UCSB董希教授课题组引力理论研究员\n\
-- THE Hack and hack.init() Hackathon联合创始人、创喵信息科技有限公司法定代表人\n\
-- 密歇根大学 MHacks X 高盛最佳数据可视化奖\n\
-- 持证飞行员\n\
-- 美国青年物理学家邀请赛特邀评委（志愿者）\n\
-- Gravity theory researcher in Prof. Xi Dong’s group at UCSB\n\
-- THE Hack and hack.init() Hackathon co-founder and Legal Representative of the Chuangmiao Information Science & Technology Co., Ltd\n\
-- Goldman Sachs Best data visualization prize in MHacks X at University of Michigan\n\
-- Pilot in practice with PPL\n\
+              name: '徐子骞 Risa', pic: "Risa.jpg", text: "-C.I.E. 创始人<br/>\
+-YOC  \"The Only Way to Succeed\": A Glimpse of the Involution Among Chinese Youths 当代教育现状研究<br/>\
+-YIC \"The Only Way to Succeed\": A Glimpse of the Involution Among Chinese Youths 当代学生心理研究<br/>\
+-Conrad Challenge 科技创新创业竞赛国家级奖项<br/>\
+-Spark公益支教志愿者<br/>\
+<br/>\
+-C.I.E. Founder<br/>\
+-YOC  \"The Only Way to Succeed\": A Glimpse of the Involution Among Chinese Youths Superior Award<br/>\
+-YIC \"The Only Way to Succeed\": A Glimpse of the Involution Among Chinese Youths Research Leader<br/>\
+-Conrad Challenge National Award<br/>\
+-Spark Charity teaching volunteers<br/>\
+" },
+            { name: '黄锶桐 Sammi', pic: "Sammi.jpg", text: "-托福口语28<br/>-科学奥林匹克前十<br/>-四年的学生会主席<br/>-AP中文课程讲师<br/>-University of Pennsylvania志愿者<br/><br/>-TOEFL Speaking 28<br/>- Science Olympiad top ten<br/>- Four-year student council president<br/>- Instructor of AP Chinese course<br/>-University of Pennsylvania Volunteer<br/>" },
+            { name: '朱玮钰 Michele', pic: "Michele.jpg", text: "-雅思口语7<br/>-西南财经大学国际经济与贸易（双语）专业<br/>-四川农业大学同学合作完成项目“染青衣”，获得省级前三，项目已在落地中。<br/>-四川省乔登杯口语比赛省级前三<br/>-Junior Achievement志愿者<br/> <br/>-IELTS Speaking 7<br/>- International Economics and Trade (Bilingual) Major in Southwestern University of Finance and   Economics<br/>- Project \"Dyeing Tsing Yi\" won Provincial Finalist<br/>- Sichuan Jordan Cup Oral Competition Finalist<br/>-Junior Achievement Volunteer" },
+            { name: '马如意 Ruyi', pic: "Ruru.jpg", text: "-Non-profit Tutoring Organization Founder 非盈利教育机构联合创始人<br/>-Non-profit Feral Cat Rescue Foundation Founder 非盈利流浪猫救助中心 猫途 创始人<br/>-International Student Blog Account 创始人<br/>-留学生汉文化组织 Fifteen 联合创始人兼主编 <br/>-President’s Service Award - Gold <br/><br/>-Founder of International Student Blog<br/>-Non-profit Tutoring Organization Founder<br/>-Non-profit Feral Cat Rescue Foundation Founder<br/>-Co-founder and editor-in-chief of Fifteen, a Chinese cultural organization for international students<br/>-President's Service Award - Gold<br/>" },
+            { name: '何天烁 Todd ', pic: "Todd.jpg", text: "托福口语 28<br/>TechX Hackathon 软件组一等奖<br/>PPMT前十<br/>英国数学信托金奖<br/>Acing Autism志愿者<br/><br/>TOEFL Speaking 28<br/>TechX Hackathon First Prize in Software Division<br/>Peer Potential Mock trial Top 10<br/>United Kingdom Maths Trust Gold Prize<br/>Acing Autism Volunteer<br/>" },
+            // { name: '郭闻起 Wayne', pic: "Wayne.png", text: "The founder of the CIE. <br/>CIE创始人" },
+            {
+              name: '李依落 Nadie', pic: "Nadie.jpg", text: "- UCSB董希教授课题组引力理论研究员<br/>\
+- THE Hack and hack.init() Hackathon联合创始人、创喵信息科技有限公司法定代表人<br/>\
+- 密歇根大学 MHacks X 高盛最佳数据可视化奖<br/>\
+- 持证飞行员<br/>\
+- 美国青年物理学家邀请赛特邀评委（志愿者）<br/>\
+- Gravity theory researcher in Prof. Xi Dong’s group at UCSB<br/>\
+- THE Hack and hack.init() Hackathon co-founder and Legal Representative of the Chuangmiao Information Science & Technology Co., Ltd<br/>\
+- Goldman Sachs Best data visualization prize in MHacks X at University of Michigan<br/>\
+- Pilot in practice with PPL<br/>\
 - Invited Juror in the US Invitational Young Physicists Tournament (Volunteer)" },
           ]
         }
@@ -252,9 +281,13 @@
 
               <div>
                 <i class="ri-mail-send-line"></i>
-                <p><a>risaxu0727@gmail.com</a></p>
+                <p><a href="mailto:risaxu0727@gmail.com">risaxu0727@gmail.com</a></p>
               </div>
-
+              <div>
+                <i class="ri-chat-3-line"></i>
+                <!-- huiyihuangjiufangfahuxitt -->
+                <p><a href="javascript:showQR()">WeChat ID: scfundraiser2021</a></p>
+              </div>
             </div>
           </div>
 
@@ -363,7 +396,7 @@
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
   <script type="text/javascript"
-    src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </body>
 
 </html>

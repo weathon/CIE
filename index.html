@@ -82,7 +82,7 @@
         <ul>
           <li class="active"><a href="index.html"><i class="bx bx-home"></i> <span>主页 | Home</span></a></li>
           <li><a href="#about"><i class="bx bx-user"></i> <span>关于 | About</span></a></li>
-          <li><a href="#multi-video"><i class="icofont-book"></i> <span>课程试听 | Demo</span></a></li>
+          <!-- <li><a href="#multi-video"><i class="icofont-book"></i> <span>课程试听 | Demo</span></a></li> -->
           <li><a href="#contact"><i class="bx bx-envelope"></i>加入我们 | Join The Team</a></li>
 
         </ul>
@@ -93,10 +93,10 @@
   </header><!-- End Header -->
 
   <!-- ======= Hero Section ======= -->
-  <section id="hero" class="d-flex flex-column justify-content-center align-items-center">
+  <section id="hero" class="d-flex flex-column justify-content-center align-items-center" style="left:10%">
     <div class="hero-container" data-aos="fade-in">
       <h1>Coastal International Education</h1>
-      <p><span class="typed"
+      <p> <span class="typed"
           data-typed-items="<b>A</b>ctive Learning, <b>B</b>roadened Horizons, <b>C</b>onsistent Interest"></span></p>
       <!-- <p>目标 | Target： <span class="typed" data-typed-items="Affordable, Persistent, Active"></span></p> -->
 
@@ -155,8 +155,8 @@
         </li>
       </ul> -->
         <!-- k -->
-        <div id="peopleList" class="scrollmenu">
-          <div style="width:15%;" v-for="person in people" :key="person.name">
+        <div id="peopleList" class="scrollmenu" style="overflow:auto">
+          <div style="width:160px;" v-for="person in people" :key="person.name">
             <img v-bind:src="'assets/img/' + person.pic" style="width:100%;border-radius: 1000px;"
               v-on:click="alert(person.text)" />
             <br />
@@ -196,13 +196,13 @@
               type: 1
               , title: false //不显示标题栏
               , closeBtn: false
-              , area: '60%;'
+              , area: '90%;'
               , shade: 0.8
               , id: 'LAY_layuipro' //设定一个id，防止重复弹出
               , btn: ['Okay']
               , btnAlign: 'c'
               , moveType: 1
-              , content: "<p style='padding: 20px 100px;'>" + text + "</p>"
+              , content: "<p style='padding: 20px 20px;'>" + text + "</p>"
             });
             // });
           }

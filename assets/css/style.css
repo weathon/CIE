@@ -131,7 +131,7 @@ h1, h2, h3, h4, h5, h6 {
   margin-left: 300px;
 }
 
-@media (max-width: 1199px) {
+@media (max-width: 1663px) {
   #header {
     left: -300px;
   }
@@ -937,7 +937,7 @@ multi-video
   color: #eaebf0;
 }
 
-@media (max-width: 1199px) {
+@media (max-width: 1663px) {
   #footer {
     position: static;
     width: auto;
